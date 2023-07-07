@@ -1,0 +1,10 @@
+-- The query below shows how I identifed the facilities with fees for their use and whose fees are less than 1/50th of the cost of their monthly maintenance.
+SELECT facid, name, membercost, monthlymaintenance
+FROM cd.facilities
+WHERE membercost > 0 
+AND membercost < (monthlymaintenance/50.0)
+
+--Find all facilities that include "Tennis" in their names.
+SELECT *
+FROM cd.facilities
+WHERE name like '%Tennis%'
