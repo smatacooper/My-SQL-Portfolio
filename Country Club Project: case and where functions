@@ -1,0 +1,12 @@
+-- continuing to experiment with the country club dataset that includes tables for membership, facilities and bookings.  Below I used the case function to categorize facilities' maintenance costs as either cheap or expensive based on the monthly cost.
+SELECT name, 
+case when (monthlymaintenance > 100) then 'expensive'
+else 'cheap'
+end as cost
+FROM cd.facilities
+
+--This query pulls all members who joined on or after September 1, 2012.
+SELECT memid, surname, firstname, joindate
+FROM cd.members
+WHERE joindate >= '2012-09-01 00:00:01'
+
